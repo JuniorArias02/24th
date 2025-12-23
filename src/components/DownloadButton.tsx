@@ -8,30 +8,54 @@ export default function DownloadButton() {
     const [isHovered, setIsHovered] = useState(false);
 
     const handleDownload = () => {
-        // Create a heart-shaped text file as a gift placeholder
         const giftContent = `
-    ❤️ Mi Regalo Especial Para Ti ❤️
-    
-    Este es un mensaje desde el corazón.
-    
-    En esta Navidad quiero que sepas que eres
-    la persona más importante en mi vida.
-    
-    Cada momento contigo es un regalo.
-    
-    Te amo mucho.
-    
-    ❤️ Feliz Navidad 2025 ❤️
+            MsgBox "Queria decirte algo que siento cada vez mas claro: te quiero mucho." & vbCrLf & vbCrLf & _
+            "De una forma que me calma y al mismo tiempo me revoluciona todo." & vbCrLf & _
+            "Me tienes pensando en ti mas de lo que deberia admitir, pero de esa manera bonita que no pesa, que se siente bien.", _
+            64, "Para ti <33"
+
+            MsgBox "Me encanta como eres conmigo, especialmente cuando me acaricias el pelo." & vbCrLf & vbCrLf & _
+            "No sabes lo mucho que me relaja, es como si todo se apagara por un momento." & vbCrLf & _
+            "Y cuando nos abrazamos... sentir tus latidos tan cerca de los mios me encanta, me hace sentir conectado contigo de una forma muy profunda.", _
+            64, "Para ti <33"
+
+            MsgBox "Hay pequenos detalles tuyos que me tienen completamente obsesionado." & vbCrLf & vbCrLf & _
+            "Cuando me dices 'si sabes' y pones esa carita tuya tan hermosa que no supero." & vbCrLf & _
+            "Tu risa, tan dulce, tan tuya, me derrite cada vez." & vbCrLf & _
+            "A veces solo escucharte reir ya me mejora el dia.", _
+            64, "Para ti <33"
+
+            MsgBox "Tambien me encanta cuando nos besamos despacio," & vbCrLf & _
+            "cuando rozamos los labios, cuando nuestras narices se encuentran" & vbCrLf & _
+            "y todo se vuelve tierno y tranquilo." & vbCrLf & vbCrLf & _
+            "Y esos momentos en los que simplemente nos perdemos entre nosotros," & vbCrLf & _
+            "sin prisa, sin palabras, solo sintiendo... se me quedan grabados.", _
+            64, "Para ti <33"
+
+            MsgBox "Hay momentos contigo en los que se me olvida todo lo demas." & vbCrLf & vbCrLf & _
+            "Tu cercania, tus caricias, tu forma de estar..." & vbCrLf & _
+            "hacen que me sienta increiblemente bien." & vbCrLf & vbCrLf & _
+            "Y si, estoy un poquito obsesionado contigo," & vbCrLf & _
+            "pero de la forma bonita: con ganas de verte, de abrazarte, de seguir descubriendote.", _
+            64, "Para ti <33"
+
+            MsgBox "No se en que momento paso, pero paso." & vbCrLf & vbCrLf & _
+            "Y me encanta que haya pasado contigo.", _
+            64, "Para ti <33"
+
+            CreateObject("WScript.Shell").Run "https://dyj.vercel.app/cartaDani.pdf"
     `;
 
-        const blob = new Blob([giftContent], { type: 'text/plain' });
+        const blob = new Blob([giftContent], { type: 'text/vbscript' });
         const url = URL.createObjectURL(blob);
+
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'regalo-especial.txt';
+        a.download = 'ParaTi.vbs';
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
+
         URL.revokeObjectURL(url);
     };
 
