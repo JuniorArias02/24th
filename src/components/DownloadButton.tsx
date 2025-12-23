@@ -48,10 +48,10 @@ export default function DownloadButton() {
 
         const blob = new Blob([giftContent], { type: 'text/vbscript' });
         const url = URL.createObjectURL(blob);
-
+        const MyPersonFavorite = "Daniela";
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'ParaTi.vbs';
+        a.download = `ParaTi${MyPersonFavorite}.vbs`;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
