@@ -23,7 +23,7 @@ export default function Countdown({ onComplete }: CountdownProps) {
         // Fade in animation on mount
         setTimeout(() => setIsVisible(true), 100);
 
-        const targetDate = new Date('2025-12-24T00:00:00').getTime();
+        const targetDate = new Date('2025-12-23T20:00:00').getTime();
 
         const calculateTimeLeft = () => {
             const now = Date.now();
